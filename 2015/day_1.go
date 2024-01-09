@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"os"
+
+	"github.com/tisp/aoc-2015/utils"
 )
 
 const (
@@ -16,16 +17,8 @@ func main() {
 	SolutionPartTwo()
 }
 
-func ReadSample(filename string) string {
-	data, err := os.ReadFile(filename)
-	if err != nil {
-		panic(err)
-	}
-	return string(data)
-}
-
 func SolutionPartOne() {
-	input := ReadSample("./sample-1.txt")
+	input := utils.ReadSampleByDay(1, 1)
 
 	current_floor := 0
 	for _, dir := range input {
@@ -40,8 +33,7 @@ func SolutionPartOne() {
 }
 
 func SolutionPartTwo() {
-	input := ReadSample("./sample-2.txt")
-
+	input := utils.ReadSampleByDay(2, 1)
 	current_floor := 0
 	for pos, dir := range input {
 		switch string(dir) {
